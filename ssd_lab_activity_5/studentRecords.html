@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h2 align="center">STUDENT RECORDS</h2>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+		var k=1;
+		function addrecord(){
+			var a = document.getElementById("roll").value;
+			var b = document.getElementById("name").value;
+			var table = document.getElementById("recordtable");
+			var new_row = table.insertRow(k);
+			var cell1 = new_row.insertCell(0);
+			var cell2 = new_row.insertCell(1);
+			cell1.innerHTML = a;
+			cell2.innerHTML = b;
+			k++;
+		}
+		function deleterecord(){
+			// var table = document.getElementById("recordtable");
+			// var new_row = table.insertRow(k);
+			// var cell1 = new_row.insertCell(0);
+			// var cell2 = new_row.insertCell(1);
+			// cell1.innerHTML = k;
+			// cell2.innerHTML = k;
+			if(k>1) {
+				document.getElementById("recordtable").deleteRow(k-1);
+				k--;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div align="center">
+	<div id="login", align="center">
+		<button id="add" onclick="addrecord()">Add new</button>
+		<input id="roll", type="number">
+		<input id="name">
+		<button id="delete" onclick="deleterecord()">Delete last record</button>
+		<table id="recordtable" border="1px", cellpadding="5px">
+			<tr bgcolor="green">
+				<th>Roll No.</th>
+				<th>Name</th>
+			</tr>
+		</table>
+	</div>
+	</div>
+</body>
+</html>
